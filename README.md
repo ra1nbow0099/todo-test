@@ -1,16 +1,20 @@
-How to Install:
-To install dependecies run this command in console:
+# How to Install:
+## To install dependecies run this command in console:
 
+```javascript
 npm install
+```
 
-To launch server run this command in console:
+##To launch server run this command in console:
 
+```javascript
 npm run dev
+```
 
-Architecture explanation
-The application is made to store information about things that you should do!
+###Architecture explanation
+##The application is made to store information about things that you should do!
 
-To create an application, I used the following technologies:
+##To create an application, I used the following technologies:
 
 Node.js and express framework for back-end
 REST api to handle requests

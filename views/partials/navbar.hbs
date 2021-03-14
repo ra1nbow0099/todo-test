@@ -1,0 +1,24 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><strong>Todo app</strong></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if isHome}}
+        <li class="active"><a href="/">Todos page</a></li>
+        {{else}}
+        <li><a href="/">Todos page</a></li>
+        {{/if}}
+
+        {{#if isCategories}}
+        <li class="active"><a href="/categories">Categories</a></li>
+        {{else}}
+        <li><a href="/categories">Categories</a></li>
+        {{/if}}
+
+        {{#if isInfo}}
+        <li class="active"><a href="/info">Info</a></li>
+        {{else}}
+        <li><a href="/info">info</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>

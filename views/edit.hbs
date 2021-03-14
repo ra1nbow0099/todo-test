@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit todo!</title>
+    <meta charset="utf-8" />
+    <style>
+        .editPage {
+            text-align: center
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    {{> navbar}}
+    <div class="editPage">
+        <h1>Edit todo!</h1>
+        <form action="/edit" method="POST">
+            <input type="hidden" name="id" value="{{user.id}}" />
+            <label>Title</label><br>
+            <input name="title" value="{{user.title}}"  class="field" /><br><br>
+            <label>Description</label><br>
+            <input name="description" value="{{user.description}}"  class="field" /><br><br>
+            <input type="submit" value="Edit" class="btn"/>
+        </form>
+        <a href="/">Main page</a>
+     </div>
+</body>
+<html>

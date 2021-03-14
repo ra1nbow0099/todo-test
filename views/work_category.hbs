@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Work category</title>
+</head>
+<body>
+    {{> navbar}}
+    <div class="center">
+        <table class="centered">
+                    <h3>Your work list:</h3>
+                {{#each titles}}
+                    <tr>
+                        <td>
+                            <strong>🔱Title🔱</strong><br>
+                            {{this.title}}
+                        </td>
+                        <td>
+                            <strong>🔱Category🔱</strong><br>
+                            {{this.category}}
+                        </td>
+                        <td>
+                            <strong>🔱Description🔱</strong><br>
+                            {{this.description}}
+                        </td>
+                        <td>
+                            <strong>🔱Date to do🔱</strong><br>
+                            {{this.date}}
+                        </td>
+                        <td>
+                            <a href="/edit/{{this.id}}" class="btn">Edit</a>
+                            <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                                <input type="submit" value="Delete" class="btn"/>
+                            </form>
+                        </td>
+                    </tr>
+                {{/each}}
+            </table>
+    </div>
+</body>
+</html>

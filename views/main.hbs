@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"  media="screen,projection"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .mainPage {
+            text-align: center;
+        }
+    </style>
+    <title>{{{title}}}</title>
+</head>
+<body>
+    {{> navbar}}
+    <div class="mainPage">
+        <h1>📄TODO LIST!📄</h1>
+            <div class="row">
+                <form class="col s12" method="POST">
+                    <div class="row">
+                        <div class="input-field col s6 push-s3">
+                            <input type="text" class="field" name="title" id="title" placeholder="title of your todo">
+                                    <p>
+                                    <label>
+                                        <input name="category" value="none" type="radio" checked />
+                                        <span>none</span>
+                                    </label>
+                                    </p>
+                                    <p>
+                                    <label>
+                                        <input name="category" value="home" type="radio" />
+                                        <span>Home category</span>
+                                    </label>
+                                    </p>
+                                    <p>
+                                    <label>
+                                        <input class="with-gap" value="work" name="category" type="radio"  />
+                                        <span>Work category</span>
+                                    </label>
+                                    </p>
+                            <input type="text" class="field" name="description" id="description" placeholder="description">
+                            <input type="text" class="datepicker" name="date" placeholder="Date to do!">
+                            <input type="submit" id="title" class="btn" value="Add todo!">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <table class="centered">
+                <h4>🚀YOUR TODOS🚀</h4>
+            {{#each titles}}
+                <tr>
+                    <td>
+                        <strong>🔱Title🔱</strong><br>
+                        {{this.title}}
+                    </td>
+                    <td>
+                        <strong>🔱Category🔱</strong><br>
+                        {{this.category}}
+                    </td>
+                    <td>
+                        <strong>🔱Description🔱</strong><br>
+                        {{this.description}}
+                    </td>
+                    <td>
+                        <strong>🔱Date to do🔱</strong><br>
+                        {{this.date}}
+                    </td>
+                    <td>
+                        <a href="/edit/{{this.id}}" class="btn">Edit</a>
+                        <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                            <input type="submit" value="Delete" class="btn"/>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>

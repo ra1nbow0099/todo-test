@@ -16,7 +16,7 @@ npm run dev
 
 ## To create an application, I used the following technologies:
 
-Node.js and express framework for back-end
-REST api to handle requests
-Handlebars to represent views
-Mysql for data storage (ORM: sequelize)
+* Node.js and express framework for back-end
+* REST api to handle requests
+* Handlebars to represent views
+* Mysql for data storage (ORM: sequelize)
